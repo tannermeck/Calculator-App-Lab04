@@ -1,6 +1,9 @@
 // import functions
 // import add function
 import { add } from "./calculations.js";
+import { subtract } from "./calculations.js";
+import { multiply } from "./calculations.js";
+import { divide } from './calculations.js';
 // reference needed DOM elements
 // add-num1, add-num2, add-answer, add-btn
 const addNum1 = document.getElementById("add-num1")
@@ -16,14 +19,43 @@ addBtn.addEventListener('click', ()=> {
   addAnswer.textContent = answer;
 });
 
+//subtract//
+const subtractNum1 = document.getElementById("subtract-num1")
+const subtractNum2 = document.getElementById("subtract-num2")
+const subtractAnswer = document.getElementById("subtract-answer")
+const subtractBtn = document.getElementById("subtract-btn")
 
+subtractBtn.addEventListener('click', ()=> {
+  const sub1 = Number(subtractNum1.value);
+  const sub2 = Number(subtractNum2.value);
+  const subAnswer = subtract(sub1, sub2);
+  subtractAnswer.textContent = subAnswer;
+  console.log(subAnswer);
+})
 
-// set event listeners 
-  // get user input(s)
-  // do any needed work with the value(s)
-  // update DOM to reflect new value(s)
+//multiply//
+const multiplyNum1 = document.getElementById("multiply-num1");
+const multiplyNum2 = document.getElementById("multiply-num2");
+const multiplyAnswer = document.getElementById("multiply-answer");
+const multiplyBtn = document.getElementById("multiply-btn");
 
-  // add event listener to button click
-  // get the value in add-num1 -- convert to number
-  // get the value add-num2 -- convert to number
-  // call add function with add-num1
+multiplyBtn.addEventListener('click', () => {
+  const mNum1 = Number(multiplyNum1.value);
+  const mNum2 = Number(multiplyNum2.value);
+  const mAnswer = multiply(mNum1, mNum2)
+  console.log(mAnswer)
+  multiplyAnswer.textContent = mAnswer
+})
+//division//
+const divideNum1 = document.getElementById("divide-num1");
+const divideNum2 = document.getElementById("divide-num2");
+const divideAnswer = document.getElementById("divide-answer");
+const divideBtn = document.getElementById("divide-btn");
+
+divideBtn.addEventListener('click', () => {
+  const div1 = Number(divideNum1.value);
+  const div2 = Number(divideNum2.value);
+  const divAns = divide(div1, div2);
+  console.log(divAns);
+  divideAnswer.textContent = Math.round(divAns * 100) / 100
+})
