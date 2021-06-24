@@ -4,6 +4,7 @@ import { add } from "./calculations.js";
 import { subtract } from "./calculations.js";
 import { multiply } from "./calculations.js";
 import { divide } from './calculations.js';
+import { modulo } from './calculations.js';
 // reference needed DOM elements
 // add-num1, add-num2, add-answer, add-btn
 const addNum1 = document.getElementById("add-num1")
@@ -58,4 +59,16 @@ divideBtn.addEventListener('click', () => {
   const divAns = divide(div1, div2);
   console.log(divAns);
   divideAnswer.textContent = Math.round(divAns * 100) / 100
+})
+const moduloNum1 = document.getElementById("modulo-num1");
+const moduloNum2 = document.getElementById("modulo-num2");
+const moduloAnswer = document.getElementById("modulo-answer");
+const moduloBtn = document.getElementById("modulo-btn");
+
+moduloBtn.addEventListener('click', () => {
+  const m1 = Number(moduloNum1.value)
+  const m2 = Number(moduloNum2.value)
+  const mAnswer = modulo(m1, m2);
+  console.log(mAnswer)
+  moduloAnswer.textContent = mAnswer
 })
